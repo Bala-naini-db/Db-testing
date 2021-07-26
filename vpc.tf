@@ -7,7 +7,7 @@ resource "google_compute_network" "vpc" {
 
 // Create Subnet
 resource "google_compute_subnetwork" "subnet" {
- name          = var.subnet-name
+ name          = var.subnet_name
  ip_cidr_range = var.subnet_cidr
  network       = var.vpc_network_name
  depends_on    = ["google_compute_network.vpc"]
