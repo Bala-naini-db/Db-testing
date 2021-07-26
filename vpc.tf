@@ -17,7 +17,7 @@ resource "google_compute_subnetwork" "subnet" {
 //google cloud instance
 
 resource "google_compute_address" "static" {
-  name = "ipv4-address"
+  name = "ipv4-address1"
 }
 
 resource "google_compute_instance" "example" {
