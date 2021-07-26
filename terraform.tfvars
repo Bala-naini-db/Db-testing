@@ -1,5 +1,0 @@
-vpc_name = "testvpc01"
-subnet-name = "testsubnet01"
-subnet_cidr = "10.10.0.0/24"
-vpc_network_name = "testnetwork"
-region = "us-central1"
