@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "prefab-breaker-319803",
+  "private_key_id": "37fd75a0e15d9de18f35cd145efc65667bbcc1ad",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC4AJpJpFtKRVEv\nwbWS1vQ10+bvdVc/YNtiqn3WW5UzOwEtmr0b/tBIcuzpN9t21YTcceq42KnzlYsS\n4DGzqrsCVguHC43ba7LJkQJ4F6I4pQMNZ3jePTZHyBYo8j5ZlsBhhTB7hm54BjDr\n+z1wrVr08RDyCCThupLm5+SynziDHZaq/TGJAhaHsdPgoiuKJdEGArCFc7GepgqO\nMEGbXKrb/9E0DJBDmchMNtKgygtgvZgD+5U6444e54zRfYuFLurZw2RRxchij2fC\ntu4xk+Ub+Bg2wOk0m4K4af4Abyj1DycXp5we6MdZ99vqLyN7KPlJKgbKpMKs/Wmn\nm7OS29ZjAgMBAAECggEATATTuYERxkmFFTnujlAIbQSy8FOGTETz3nuZqaoEpjnG\nbtTzNFG+M3BnuKK/JQVp8rmNw/ifnmc2IgJGBniO8pQiBxUa8oA4SVaDsqHw/34N\nGMibAxY/CsD7hscuQ00pBiFEuoP7t9K2+4e9BoRYg8HkwlnjAu9WKde8gJ+PdXtb\nxxcZFJgebJp079e5KkIdyR24rVFAATdCvrzIRJvV35XGIykAXrZWaucC9DHPEA2m\n6NCfqVSa+JcjcSii6+o3lkQCVGKZkMkAIEJERkEEbYgU1Z11b5kWuZisecEBKRR1\nCXXjt8/e2/gd32CesiSAY/fcLAYN2B7WgVE6B1TdQQKBgQDvTb9jgeiHdpmsnyEP\nHBQS09h5JTB6WzwTzpK2Bbf1ke2kVhae+UVsjHPFyDGIGVHYOOZeh1d/WMd4AkVu\nGgg9CLVe3ZRiHy/4jsARJV4Ex8uvNAkgsx3GPZjcPUEdqoSTuNStIB3QWqqFcfTY\nSCsmzVkkdE7518AG+OpbaYuyCQKBgQDE1xs8dqfrrgltUEkXRIzh+v2vk0z19q9m\nmX9zSpIdhnjWvkaxCauikr5Ecr2e6ExUvalParRLdn7Rmff46uT9wy3ItkrovwSo\ntukXllpPE/OB4Tnadcf0M0SmmWnFdOvw143J1ylzT7dKX0f2/KcKVqzD5Met2N0v\njItXjQ2wCwKBgBpf0EMwUydy69b5ptQafR/iF06qyaACpClur/69vJulHLLrBg05\nXexrwmq++K6OU9Xn14P9mKghacKRRYOv/M51QkAVXcA+vbPAT+zT2HvgZVOHAaaH\n9zUdHtbPLXkOjRQW3+HA02heRcL1X03jDlZ1dWiuJPImVDSwhGvUwx+5AoGBAKBW\nuBDgdpg8A+HPbDpP1JKfaNYEHsScVPQ2ROMc8zipuPTzuZGsVururZ4D+QHgJ40/\nkRLn0EVIGLWTvbI9ZJpwynKcSxibwKfNlsFn79hKYCiD1iRlnKMGv/0VKlt1ilt8\nujqX0WPko2Epi+1ckJSTVdecHCs4Y7O/wCFo/KVRAoGAPCHfHEDT0HTgeh8b3Jfi\n7Qtp8f9cSiO0rfzrF2WPc+4rlvicPLvrDjJ7Hf2h11e+MUYEE+oC9u31vTjEkpwD\nHLkPEGroOQBCHEJXOFtKn1bjgRzTW6uoAPPxyskP/zOxaSYYWv4c573WqnMCdgWG\n3TRbmFw5MaGDZ2+x+aTd/Rs=\n-----END PRIVATE KEY-----\n",
+  "client_email": "balodi@prefab-breaker-319803.iam.gserviceaccount.com",
+  "client_id": "101808190943985036279",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/balodi%40prefab-breaker-319803.iam.gserviceaccount.com"
+}
