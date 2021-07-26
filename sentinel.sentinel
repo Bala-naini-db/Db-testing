@@ -1,33 +1,59 @@
-# this policy uses the sentinel tfplan/v2 import for terraform
-import "tfplan/v2" as tfplan
-import "strings"
-import "types"
+  
+import "tfplan"
 
-# this section will get all resource changes for this terraform resource and filter for updated or created actions
-allComputeInstanceResources = filter tfplan.resource_changes as _, resource_changes {
-	resource_changes.type is "google_compute_instance" and
-		resource_changes.mode is "managed" and
-		(resource_changes.change.actions contains "create" or
-			resource_changes.change.actions is ["update"])
-}
-
-print ("Policy Validation - Ensure Access_Config is not specified for Compute Instance for public IP")
-
-RestrictExternalIpVM_rule = rule {
-	all allComputeInstanceResources as _, rc {
-		all rc.change.after.network_interface as _, ni {
-			ni.access_config is []
-		}
+# Get an array of all resources of the given type (or an empty array).
+get_resources = func(type) {
+	if length(tfplan.module_paths else []) > 0 { # always true in the real tfplan import
+		return get_resources_all_modules(type)
+	} else { # fallback for tests
+		return get_resources_root_only(type)
 	}
 }
 
-v = strings.split(tfplan.terraform_version, ".")
-version_major = int(v[1])
-version_minor = int(v[2])
+get_resources_root_only = func(type) {
+	resources = []
+	named_and_counted_resources = tfplan.resources[type] else {}
+	# Get resource bodies out of nested resource maps, from:
+	# {"name": {"0": {"applied": {...}, "diff": {...} }, "1": {...}}, "name": {...}}
+	# to:
+	# [{"applied": {...}, "diff": {...}}, {"applied": {...}, "diff": {...}}, ...]
+	for named_and_counted_resources as _, instances {
+		for instances as _, body {
+			append(resources, body)
+		}
+	}
+	return resources
+}
 
-# the main rule calls the policy rule(s) and evaluates the final sentinel results
+get_resources_all_modules = func(type) {
+	resources = []
+	for tfplan.module_paths as path {
+		named_and_counted_resources = tfplan.module(path).resources[type] else {}
+		# Get resource bodies out of nested resource maps, from:
+		# {"name": {"0": {"applied": {...}, "diff": {...} }, "1": {...}}, "name": {...}}
+		# to:
+		# [{"applied": {...}, "diff": {...}}, {"applied": {...}, "diff": {...}}, ...]
+		for named_and_counted_resources as _, instances {
+			for instances as _, body {
+				append(resources, body)
+			}
+		}
+	}
+	return resources
+}
+
+allowed_machine_types = [
+	"n1-standard-1",
+	"n1-standard-2",
+	"n1-standard-4",
+]
+
+machine_type_allowed = rule {
+	all get_resources("google_compute_instance") as r {
+		r.applied.machine_type in allowed_machine_types
+	}
+}
+
 main = rule {
-	RestrictExternalIpVM_rule and
-	version_major >= 13 and
-	version_minor >= 0
+	(machine_type_allowed) else true
 }
