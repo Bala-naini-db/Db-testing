@@ -1,0 +1,720 @@
+terraform_version = "0.14.6"
+
+planned_values = {
+	"outputs": {},
+	"resources": {
+		"google_compute_instance.disalbe-public-ip-vm": {
+			"address":        "google_compute_instance.disalbe-public-ip-vm",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "disalbe-public-ip-vm",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_compute_instance",
+			"values": {
+				"allow_stopping_for_update": null,
+				"attached_disk":             [],
+				"boot_disk": [
+					{
+						"auto_delete":             true,
+						"disk_encryption_key_raw": null,
+						"initialize_params": [
+							{
+								"image": "debian-10-buster-v20201112",
+							},
+						],
+						"mode": "READ_WRITE",
+					},
+				],
+				"can_ip_forward":          false,
+				"deletion_protection":     false,
+				"description":             "Testing the Sentinel policy to check if Public IP is enabled",
+				"desired_status":          null,
+				"enable_display":          null,
+				"hostname":                null,
+				"labels":                  null,
+				"machine_type":            "e2-medium",
+				"metadata":                null,
+				"metadata_startup_script": null,
+				"name": "disalbe-public-ip-vm",
+				"network_interface": [
+					{
+						"access_config":  [],
+						"alias_ip_range": [],
+						"subnetwork":     "default",
+					},
+					{
+						"access_config":  [],
+						"alias_ip_range": [],
+						"subnetwork":     "abc",
+					},
+				],
+				"project":                  "teststorageacc",
+				"resource_policies":        null,
+				"scratch_disk":             [],
+				"service_account":          [],
+				"shielded_instance_config": [],
+				"tags":     null,
+				"timeouts": null,
+			},
+		},
+		"google_compute_instance.gkevm": {
+			"address":        "google_compute_instance.gkevm",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "gkevm",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_compute_instance",
+			"values": {
+				"allow_stopping_for_update": null,
+				"attached_disk":             [],
+				"boot_disk": [
+					{
+						"auto_delete":             true,
+						"disk_encryption_key_raw": null,
+						"initialize_params": [
+							{
+								"image": "debian-10-buster-v20201112",
+							},
+						],
+						"mode": "READ_WRITE",
+					},
+				],
+				"can_ip_forward":          false,
+				"deletion_protection":     false,
+				"description":             "Testing the Sentinel policy to check if Public IP is enabled",
+				"desired_status":          null,
+				"enable_display":          null,
+				"hostname":                null,
+				"labels":                  null,
+				"machine_type":            "e2-medium",
+				"metadata":                null,
+				"metadata_startup_script": null,
+				"name": "gke-vm123",
+				"network_interface": [
+					{
+						"access_config": [
+							{
+								"public_ptr_domain_name": null,
+							},
+						],
+						"alias_ip_range": [],
+						"subnetwork":     "default",
+					},
+				],
+				"project":                  "teststorageacc",
+				"resource_policies":        null,
+				"scratch_disk":             [],
+				"service_account":          [],
+				"shielded_instance_config": [],
+				"tags":     null,
+				"timeouts": null,
+			},
+		},
+	},
+}
+
+variables = {
+	"image_name_07": {
+		"name":  "image_name_07",
+		"value": "debian-10-buster-v20201112",
+	},
+	"machine_size_07": {
+		"name":  "machine_size_07",
+		"value": "e2-medium",
+	},
+}
+
+resource_changes = {
+	"google_compute_instance.disalbe-public-ip-vm": {
+		"address": "google_compute_instance.disalbe-public-ip-vm",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"allow_stopping_for_update": null,
+				"attached_disk":             [],
+				"boot_disk": [
+					{
+						"auto_delete":             true,
+						"disk_encryption_key_raw": null,
+						"initialize_params": [
+							{
+								"image": "debian-10-buster-v20201112",
+							},
+						],
+						"mode": "READ_WRITE",
+					},
+				],
+				"can_ip_forward":          false,
+				"deletion_protection":     false,
+				"description":             "Testing the Sentinel policy to check if Public IP is enabled",
+				"desired_status":          null,
+				"enable_display":          null,
+				"hostname":                null,
+				"labels":                  null,
+				"machine_type":            "e2-medium",
+				"metadata":                null,
+				"metadata_startup_script": null,
+				"name": "disalbe-public-ip-vm",
+				"network_interface": [
+					{
+						"access_config":  [],
+						"alias_ip_range": [],
+						"subnetwork":     "default",
+					},
+					{
+						"access_config":  [],
+						"alias_ip_range": [],
+						"subnetwork":     "abc",
+					},
+				],
+				"project":                  "teststorageacc",
+				"resource_policies":        null,
+				"scratch_disk":             [],
+				"service_account":          [],
+				"shielded_instance_config": [],
+				"tags":     null,
+				"timeouts": null,
+			},
+			"after_unknown": {
+				"attached_disk": [],
+				"boot_disk": [
+					{
+						"device_name":                true,
+						"disk_encryption_key_sha256": true,
+						"initialize_params": [
+							{
+								"labels": true,
+								"size":   true,
+								"type":   true,
+							},
+						],
+						"kms_key_self_link": true,
+						"source":            true,
+					},
+				],
+				"confidential_instance_config": true,
+				"cpu_platform":                 true,
+				"current_status":               true,
+				"guest_accelerator":            true,
+				"id":                           true,
+				"instance_id":                  true,
+				"label_fingerprint":            true,
+				"metadata_fingerprint":         true,
+				"min_cpu_platform":             true,
+				"network_interface": [
+					{
+						"access_config":      [],
+						"alias_ip_range":     [],
+						"name":               true,
+						"network":            true,
+						"network_ip":         true,
+						"subnetwork_project": true,
+					},
+					{
+						"access_config":      [],
+						"alias_ip_range":     [],
+						"name":               true,
+						"network":            true,
+						"network_ip":         true,
+						"subnetwork_project": true,
+					},
+				],
+				"scheduling":               true,
+				"scratch_disk":             [],
+				"self_link":                true,
+				"service_account":          [],
+				"shielded_instance_config": [],
+				"tags_fingerprint":         true,
+				"zone":                     true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "disalbe-public-ip-vm",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_compute_instance",
+	},
+}
+
+output_changes = {}
+
+raw = {
+	"configuration": {
+		"provider_config": {
+			"google": {
+				"expressions": {
+					"project": {
+						"constant_value": "teststorageacc",
+					},
+				},
+				"name": "google",
+			},
+		},
+		"root_module": {
+			"resources": [
+				{
+					"address": "google_compute_instance.disalbe-public-ip-vm",
+					"expressions": {
+						"boot_disk": [
+							{
+								"initialize_params": [
+									{
+										"image": {
+											"references": [
+												"var.image_name_07",
+											],
+										},
+									},
+								],
+							},
+						],
+						"description": {
+							"constant_value": "Testing the Sentinel policy to check if Public IP is enabled",
+						},
+						"machine_type": {
+							"references": [
+								"var.machine_size_07",
+							],
+						},
+						"name": {
+							"constant_value": "disalbe-public-ip-vm",
+						},
+						"network_interface": [
+							{
+								"subnetwork": {
+									"constant_value": "default",
+								},
+							},
+							{
+								"subnetwork": {
+									"constant_value": "abc",
+								},
+							},
+						],
+						"project": {
+							"constant_value": "teststorageacc",
+						},
+					},
+					"mode":                "managed",
+					"name":                "disalbe-public-ip-vm",
+					"provider_config_key": "google",
+					"schema_version":      6,
+					"type":                "google_compute_instance",
+				},
+				{
+					"address": "google_compute_instance.gkevm",
+					"expressions": {
+						"boot_disk": [
+							{
+								"initialize_params": [
+									{
+										"image": {
+											"references": [
+												"var.image_name_07",
+											],
+										},
+									},
+								],
+							},
+						],
+						"description": {
+							"constant_value": "Testing the Sentinel policy to check if Public IP is enabled",
+						},
+						"machine_type": {
+							"references": [
+								"var.machine_size_07",
+							],
+						},
+						"name": {
+							"constant_value": "gke-vm123",
+						},
+						"network_interface": [
+							{
+								"access_config": [
+									{},
+								],
+								"subnetwork": {
+									"constant_value": "default",
+								},
+							},
+						],
+						"project": {
+							"constant_value": "teststorageacc",
+						},
+					},
+					"mode":                "managed",
+					"name":                "gkevm",
+					"provider_config_key": "google",
+					"schema_version":      6,
+					"type":                "google_compute_instance",
+				},
+			],
+			"variables": {
+				"image_name_07": {
+					"default":     "debian-10-buster-v20201112",
+					"description": "The kind of VM this instance will become",
+				},
+				"machine_size_07": {
+					"default":     "e2-medium",
+					"description": "The size that this instance will be.",
+				},
+			},
+		},
+	},
+	"format_version": "0.1",
+	"planned_values": {
+		"root_module": {
+			"resources": [
+				{
+					"address":        "google_compute_instance.disalbe-public-ip-vm",
+					"mode":           "managed",
+					"name":           "disalbe-public-ip-vm",
+					"provider_name":  "registry.terraform.io/hashicorp/google",
+					"schema_version": 6,
+					"type":           "google_compute_instance",
+					"values": {
+						"allow_stopping_for_update": null,
+						"attached_disk":             [],
+						"boot_disk": [
+							{
+								"auto_delete":             true,
+								"disk_encryption_key_raw": null,
+								"initialize_params": [
+									{
+										"image": "debian-10-buster-v20201112",
+									},
+								],
+								"mode": "READ_WRITE",
+							},
+						],
+						"can_ip_forward":          false,
+						"deletion_protection":     false,
+						"description":             "Testing the Sentinel policy to check if Public IP is enabled",
+						"desired_status":          null,
+						"enable_display":          null,
+						"hostname":                null,
+						"labels":                  null,
+						"machine_type":            "e2-medium",
+						"metadata":                null,
+						"metadata_startup_script": null,
+						"name": "disalbe-public-ip-vm",
+						"network_interface": [
+							{
+								"access_config":  [],
+								"alias_ip_range": [],
+								"subnetwork":     "default",
+							},
+							{
+								"access_config":  [],
+								"alias_ip_range": [],
+								"subnetwork":     "abc",
+							},
+						],
+						"project":                  "teststorageacc",
+						"resource_policies":        null,
+						"scratch_disk":             [],
+						"service_account":          [],
+						"shielded_instance_config": [],
+						"tags":     null,
+						"timeouts": null,
+					},
+				},
+				{
+					"address":        "google_compute_instance.gkevm",
+					"mode":           "managed",
+					"name":           "gkevm",
+					"provider_name":  "registry.terraform.io/hashicorp/google",
+					"schema_version": 6,
+					"type":           "google_compute_instance",
+					"values": {
+						"allow_stopping_for_update": null,
+						"attached_disk":             [],
+						"boot_disk": [
+							{
+								"auto_delete":             true,
+								"disk_encryption_key_raw": null,
+								"initialize_params": [
+									{
+										"image": "debian-10-buster-v20201112",
+									},
+								],
+								"mode": "READ_WRITE",
+							},
+						],
+						"can_ip_forward":          false,
+						"deletion_protection":     false,
+						"description":             "Testing the Sentinel policy to check if Public IP is enabled",
+						"desired_status":          null,
+						"enable_display":          null,
+						"hostname":                null,
+						"labels":                  null,
+						"machine_type":            "e2-medium",
+						"metadata":                null,
+						"metadata_startup_script": null,
+						"name": "gke-vm123",
+						"network_interface": [
+							{
+								"access_config": [
+									{
+										"public_ptr_domain_name": null,
+									},
+								],
+								"alias_ip_range": [],
+								"subnetwork":     "default",
+							},
+						],
+						"project":                  "teststorageacc",
+						"resource_policies":        null,
+						"scratch_disk":             [],
+						"service_account":          [],
+						"shielded_instance_config": [],
+						"tags":     null,
+						"timeouts": null,
+					},
+				},
+			],
+		},
+	},
+	"resource_changes": [
+		{
+			"address": "google_compute_instance.disalbe-public-ip-vm",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"allow_stopping_for_update": null,
+					"attached_disk":             [],
+					"boot_disk": [
+						{
+							"auto_delete":             true,
+							"disk_encryption_key_raw": null,
+							"initialize_params": [
+								{
+									"image": "debian-10-buster-v20201112",
+								},
+							],
+							"mode": "READ_WRITE",
+						},
+					],
+					"can_ip_forward":          false,
+					"deletion_protection":     false,
+					"description":             "Testing the Sentinel policy to check if Public IP is enabled",
+					"desired_status":          null,
+					"enable_display":          null,
+					"hostname":                null,
+					"labels":                  null,
+					"machine_type":            "e2-medium",
+					"metadata":                null,
+					"metadata_startup_script": null,
+					"name": "disalbe-public-ip-vm",
+					"network_interface": [
+						{
+							"access_config":  [],
+							"alias_ip_range": [],
+							"subnetwork":     "default",
+						},
+						{
+							"access_config":  [],
+							"alias_ip_range": [],
+							"subnetwork":     "abc",
+						},
+					],
+					"project":                  "teststorageacc",
+					"resource_policies":        null,
+					"scratch_disk":             [],
+					"service_account":          [],
+					"shielded_instance_config": [],
+					"tags":     null,
+					"timeouts": null,
+				},
+				"after_unknown": {
+					"attached_disk": [],
+					"boot_disk": [
+						{
+							"device_name":                true,
+							"disk_encryption_key_sha256": true,
+							"initialize_params": [
+								{
+									"labels": true,
+									"size":   true,
+									"type":   true,
+								},
+							],
+							"kms_key_self_link": true,
+							"source":            true,
+						},
+					],
+					"confidential_instance_config": true,
+					"cpu_platform":                 true,
+					"current_status":               true,
+					"guest_accelerator":            true,
+					"id":                           true,
+					"instance_id":                  true,
+					"label_fingerprint":            true,
+					"metadata_fingerprint":         true,
+					"min_cpu_platform":             true,
+					"network_interface": [
+						{
+							"access_config":      [],
+							"alias_ip_range":     [],
+							"name":               true,
+							"network":            true,
+							"network_ip":         true,
+							"subnetwork_project": true,
+						},
+						{
+							"access_config":      [],
+							"alias_ip_range":     [],
+							"name":               true,
+							"network":            true,
+							"network_ip":         true,
+							"subnetwork_project": true,
+						},
+					],
+					"scheduling":               true,
+					"scratch_disk":             [],
+					"self_link":                true,
+					"service_account":          [],
+					"shielded_instance_config": [],
+					"tags_fingerprint":         true,
+					"zone":                     true,
+				},
+				"before": null,
+			},
+			"mode":          "managed",
+			"name":          "disalbe-public-ip-vm",
+			"provider_name": "registry.terraform.io/hashicorp/google",
+			"type":          "google_compute_instance",
+		},
+		{
+			"address": "google_compute_instance.gkevm",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"allow_stopping_for_update": null,
+					"attached_disk":             [],
+					"boot_disk": [
+						{
+							"auto_delete":             true,
+							"disk_encryption_key_raw": null,
+							"initialize_params": [
+								{
+									"image": "debian-10-buster-v20201112",
+								},
+							],
+							"mode": "READ_WRITE",
+						},
+					],
+					"can_ip_forward":          false,
+					"deletion_protection":     false,
+					"description":             "Testing the Sentinel policy to check if Public IP is enabled",
+					"desired_status":          null,
+					"enable_display":          null,
+					"hostname":                null,
+					"labels":                  null,
+					"machine_type":            "e2-medium",
+					"metadata":                null,
+					"metadata_startup_script": null,
+					"name": "gke-vm123",
+					"network_interface": [
+						{
+							"access_config": [
+								{
+									"public_ptr_domain_name": null,
+								},
+							],
+							"alias_ip_range": [],
+							"subnetwork":     "default",
+						},
+					],
+					"project":                  "teststorageacc",
+					"resource_policies":        null,
+					"scratch_disk":             [],
+					"service_account":          [],
+					"shielded_instance_config": [],
+					"tags":     null,
+					"timeouts": null,
+				},
+				"after_unknown": {
+					"attached_disk": [],
+					"boot_disk": [
+						{
+							"device_name":                true,
+							"disk_encryption_key_sha256": true,
+							"initialize_params": [
+								{
+									"labels": true,
+									"size":   true,
+									"type":   true,
+								},
+							],
+							"kms_key_self_link": true,
+							"source":            true,
+						},
+					],
+					"confidential_instance_config": true,
+					"cpu_platform":                 true,
+					"current_status":               true,
+					"guest_accelerator":            true,
+					"id":                           true,
+					"instance_id":                  true,
+					"label_fingerprint":            true,
+					"metadata_fingerprint":         true,
+					"min_cpu_platform":             true,
+					"network_interface": [
+						{
+							"access_config": [
+								{
+									"nat_ip":       true,
+									"network_tier": true,
+								},
+							],
+							"alias_ip_range":     [],
+							"name":               true,
+							"network":            true,
+							"network_ip":         true,
+							"subnetwork_project": true,
+						},
+					],
+					"scheduling":               true,
+					"scratch_disk":             [],
+					"self_link":                true,
+					"service_account":          [],
+					"shielded_instance_config": [],
+					"tags_fingerprint":         true,
+					"zone":                     true,
+				},
+				"before": null,
+			},
+			"mode":          "managed",
+			"name":          "gkevm",
+			"provider_name": "registry.terraform.io/hashicorp/google",
+			"type":          "google_compute_instance",
+		},
+	],
+	"terraform_version": "0.14.6",
+	"variables": {
+		"image_name_07": {
+			"value": "debian-10-buster-v20201112",
+		},
+		"machine_size_07": {
+			"value": "e2-medium",
+		},
+	},
+}
