@@ -1,0 +1,33 @@
+# this policy uses the sentinel tfplan/v2 import for terraform
+import "tfplan/v2" as tfplan
+import "strings"
+import "types"
+
+# this section will get all resource changes for this terraform resource and filter for updated or created actions
+allComputeInstanceResources = filter tfplan.resource_changes as _, resource_changes {
+	resource_changes.type is "google_compute_instance" and
+		resource_changes.mode is "managed" and
+		(resource_changes.change.actions contains "create" or
+			resource_changes.change.actions is ["update"])
+}
+
+print ("Policy Validation - Ensure Access_Config is not specified for Compute Instance for public IP")
+
+RestrictExternalIpVM_rule = rule {
+	all allComputeInstanceResources as _, rc {
+		all rc.change.after.network_interface as _, ni {
+			ni.access_config is []
+		}
+	}
+}
+
+v = strings.split(tfplan.terraform_version, ".")
+version_major = int(v[1])
+version_minor = int(v[2])
+
+# the main rule calls the policy rule(s) and evaluates the final sentinel results
+main = rule {
+	RestrictExternalIpVM_rule and
+	version_major >= 13 and
+	version_minor >= 0
+}
