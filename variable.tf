@@ -28,3 +28,30 @@ variable "region" {
   default = "us-central1"
 
 }
+
+
+variable "region" {
+#  type    = "string"
+  default = "us-central1"
+
+}
+
+variable "vm_name" {
+  default = "instance01"
+}
+variable "machine_size" {
+  default = "f1-micro"
+}
+
+variable "zone" {
+  default = "f1-micro"
+}
+
+variable "project" {
+  default = "prefab-breaker-319803"
+}
+
+variable "image_name" {
+  default = "ubuntu-1604-lts"
+}
+
