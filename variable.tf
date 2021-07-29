@@ -30,11 +30,7 @@ variable "region" {
 }
 
 
-variable "region" {
-#  type    = "string"
-  default = "us-central1"
 
-}
 
 variable "vm_name" {
   default = "instance01"
