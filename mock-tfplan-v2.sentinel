@@ -15,7 +15,7 @@ planned_values = {
 			"tainted":        false,
 			"type":           "google_compute_address",
 			"values": {
-				"address_type":  "EXTERNAL",
+				"address_type":  "INTERNALL",
 				"description":   null,
 				"name":          "ipv4-address1",
 				"network":       null,
@@ -151,7 +151,7 @@ resource_changes = {
 				"create",
 			],
 			"after": {
-				"address_type":  "EXTERNAL",
+				"address_type":  "INTERNAL",
 				"description":   null,
 				"name":          "ipv4-address1",
 				"network":       null,
