@@ -3,7 +3,7 @@ variable "vpc_name" {
   default = "testvpc01"
 
 }
-variable "Environment_Variables" {}
+
 
 variable "subnet_name" {
 #type    = "string"
