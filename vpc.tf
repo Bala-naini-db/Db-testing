@@ -20,26 +20,21 @@ resource "google_compute_address" "static" {
   name = "ipv4-address1"
 }
 
-resource "google_compute_instance" "example" {
-  name          = "instance01"
-  machine_type  = "f1-micro"
-  zone          = "us-central1-a"
+resource "google_compute_instance" "restrict-public-ip-vm" {
+  description  = "Testing the Sentinel policy to check if Public IP is disabled"
+  name         = var.vm_name
+  machine_type = var.machine_size
+  zone         = var.zone
+  project      = var.project
   depends_on    = ["google_compute_network.vpc"]
-
 
   boot_disk {
     initialize_params {
-      image = "ubuntu-1604-lts"
+      image = var.image_name
     }
   }
 
   network_interface {
-    subnetwork = google_compute_subnetwork.subnet.self_link
-#if you want to use external ip address.
-    # access_config {
-    #  //Ephemeral_IP = false
-    #
-    #  nat_ip = google_compute_address.static.address
-    # }
+    subnetwork = google_compute_subnetwork.poc-subnet.self_link
   }
 }
