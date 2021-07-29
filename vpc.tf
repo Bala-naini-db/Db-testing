@@ -35,6 +35,6 @@ resource "google_compute_instance" "restrict-public-ip-vm" {
   }
 
   network_interface {
-    subnetwork = google_compute_subnetwork.poc-subnet.self_link
+    subnetwork = google_compute_subnetwork.subnet.self_link
   }
 }
